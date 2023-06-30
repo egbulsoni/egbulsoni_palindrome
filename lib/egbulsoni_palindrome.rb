@@ -9,11 +9,12 @@ class String
     processed_content == processed_content.reverse
   end
 
-  private
   # Returns content for palindrome testing.
   
+  private
+
   def processed_content
-    self.downcase
+    scan(/[a-z]/i).join.downcase
   end
 
 end

@@ -16,10 +16,10 @@ class TestEgbulsoniPalindrome < Minitest::Test
   end
 
   def test_mixed_case_palindrome
-    assert "ArARa".palindrome?
+    assert "RaceCar".palindrome?
   end
   
   def test_palindrome_with_punctuation
-    refute "O.vO".palindrome?
+    assert "Madam, I'm Adam.".palindrome?
   end
 end
