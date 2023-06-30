@@ -3,10 +3,14 @@
 require_relative "egbulsoni_palindrome/version"
 
   # Returns true for a palindrome, false otherwise
-class String
+module EgbulsoniPalindrome
 
   def palindrome?
-    processed_content == processed_content.reverse
+    if processed_content.empty?
+      false
+    else
+      processed_content == processed_content.reverse
+    end
   end
 
   # Returns content for palindrome testing.
@@ -14,7 +18,15 @@ class String
   private
 
   def processed_content
-    scan(/[a-z]/i).join.downcase
+    to_s.scan(/[a-z0-9]/i).join.downcase
   end
 
+end
+
+class String
+  include EgbulsoniPalindrome
+end
+
+class Integer
+  include EgbulsoniPalindrome
 end
